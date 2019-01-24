@@ -1,5 +1,10 @@
 <template>
     <card :title="$t('categories')">
+        <Button type="primary" dashed icon="md-add" :to="{ name: 'category.createCategory' }">
+            {{ this.$t('add') }}
+        </Button>
+        <Divider />
+
         <Table border :columns="columns" :data="data" :no-data-text="this.$t('no_data')"></Table>
     </card>
 </template>
@@ -74,15 +79,9 @@
             this.fetchCategories();
         },
         methods: {
-            show(index) {
-                this.$Modal.info({
-                    title: 'User Info',
-                    content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
-                })
-            },
             async remove(categoryId, index) {
                 try {
-                    let response = await this.$store.dispatch('categories/deleteCategory', {id: categoryId});
+                    let response = await this.$store.dispatch('category/deleteCategory', {id: categoryId});
                     if (response.data.status === 'success') {
                         this.data.splice(index, 1);
                         this.$Message.info(response.data.message);

@@ -35,16 +35,16 @@ export const actions = {
             commit(types.FETCH_CATEGORY_FAILURE)
         }
     },
-    async fetchDeviceUpdateData({commit}, payload) {
+    async fetchCategoryUpdateData({commit}, payload) {
         try {
-            return await axios.get('/api/devices/' + payload.id + '/edit');
+            return await axios.get('/api/categories/' + payload.id + '/edit');
         } catch (e) {
             console.log(e)
         }
     },
-    async deleteDevice({commit}, payload) {
+    async deleteCategory({commit}, payload) {
         try {
-            return await axios.delete('/api/devices/' + payload.id);
+            return await axios.delete('/api/categories/' + payload.id);
         } catch (e) {
             console.log(e)
         }

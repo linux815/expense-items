@@ -39,5 +39,15 @@
   "no_data": "No data",
   "expense": "Expense",
   "income": "Income",
-  "error_deleting": "Error deleting"
+  "error_deleting": "Error deleting",
+  "create": "Create",
+  "clear": "Clear",
+  "update_category": "Update category",
+  "create_category": "Create category",
+  "updating": "Updating",
+  "validate_msg_fail": "Please check the correctness of input data",
+  "validate_msg_success": "The form was successfully sent!",
+  "error_updating": "Error updating",
+  "add": "Add",
+  "add_category": "Add category"
 }

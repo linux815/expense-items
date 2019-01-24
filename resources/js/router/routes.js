@@ -1,5 +1,6 @@
 const Home = () => import('~/pages/home').then(m => m.default || m)
 const Categories = () => import('~/pages/category').then(m => m.default || m)
+const CategoryUpdate = () => import('~/pages/category/update').then(m => m.default || m)
 
 export default [
     {path: '/', name: 'home', component: Home},
@@ -7,6 +8,12 @@ export default [
         path: '/categories', component: {template: '<router-view/>'}, children: [
             {
                 path: '', component: Categories, name: 'categories'
+            },
+            {
+                path: ':id/update', name: 'category.update', component: CategoryUpdate,
+            },
+            {
+                path: '/create', name: 'category.createCategory', component: CategoryUpdate,
             },
         ]
     },
