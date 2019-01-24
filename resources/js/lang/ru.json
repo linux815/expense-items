@@ -5,5 +5,7 @@
   "go_home": "На главную",
   "update": "Обновить",
   "welcome": "Добро пожаловать!",
-  "category_expenses": "Категории расходов"
+  "category_expenses": "Категории расходов",
+  "home": "Главная",
+  "navigation": "Навигация"
 }
