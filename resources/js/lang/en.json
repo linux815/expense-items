@@ -33,5 +33,11 @@
   "register_with": "Register with",
   "welcome": "Welcome!",
   "category_expenses": "Categories of expenses",
-  "navigation": "Navigation"
+  "navigation": "Navigation",
+  "categories": "Categories",
+  "type": "Type",
+  "no_data": "No data",
+  "expense": "Expense",
+  "income": "Income",
+  "error_deleting": "Error deleting"
 }

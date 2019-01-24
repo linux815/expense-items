@@ -8,3 +8,7 @@ export const UPDATE_USER = 'UPDATE_USER'
 
 // lang.js
 export const SET_LOCALE = 'SET_LOCALE'
+
+// category.js
+export const FETCH_CATEGORY_SUCCESS = 'FETCH_CATEGORY_SUCCESS'
+export const FETCH_CATEGORY_FAILURE = 'FETCH_CATEGORY_FAILURE'

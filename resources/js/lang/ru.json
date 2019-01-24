@@ -7,5 +7,12 @@
   "welcome": "Добро пожаловать!",
   "category_expenses": "Категории расходов",
   "home": "Главная",
-  "navigation": "Навигация"
+  "navigation": "Навигация",
+  "categories": "Категории",
+  "name": "Название",
+  "type": "Тип",
+  "no_data": "Нет данных",
+  "expense": "Расход",
+  "income": "Доход",
+  "error_deleting": "Ошибка при удалении"
 }

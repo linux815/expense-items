@@ -12,6 +12,10 @@
                                 <Icon type="ios-analytics-outline"/>
                                 {{ $t('home') }}
                             </MenuItem>
+                            <MenuItem name="categories" :to="{ name: 'categories'}">
+                                <Icon type="ios-pricetags-outline"/>
+                                {{ $t('categories') }}
+                            </MenuItem>
                         </MenuGroup>
                     </Menu>
                     <div slot="trigger"></div>
