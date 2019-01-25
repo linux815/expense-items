@@ -49,5 +49,22 @@
   "validate_msg_success": "The form was successfully sent!",
   "error_updating": "Error updating",
   "add": "Add",
-  "add_category": "Add category"
+  "add_category": "Add category",
+  "expenses": "Expenses",
+  "category": "Category",
+  "comment": "Comment",
+  "cost": "Cost",
+  "action": "Action",
+  "update_expense": "Update expense",
+  "add_expense": "Add expense",
+  "placeholder_category": "Select category name",
+  "loading": "Loading",
+  "rub": "rub",
+  "placeholder_expense_cost": "Enter a cost",
+  "placeholder_expense_comment": "Enter a comment",
+  "expensed_at": "Date",
+  "placeholder_expense_start_at": "Enter a date",
+  "validate_category": "Category cannot be empty",
+  "validate_cost": "Cost cannot be empty",
+  "validate_expensed_at": "Expensed at cannot be empty"
 }

@@ -25,5 +25,23 @@
   "validate_msg_success": "Форма успешно отправлена!",
   "error_updating": "Ошибка при редактировании",
   "add": "Добавить",
-  "add_category": "Добавить категорию"
+  "add_category": "Добавить категорию",
+  "expenses": "Расходы",
+  "category": "Категория",
+  "comment": "Комментарий",
+  "cost": "Сумма",
+  "action": "Действия",
+  "update_expense": "Обновить статью расхода",
+  "add_expense": "Добавить статью расхода",
+  "placeholder_category": "Выберите категорию",
+  "loading": "Загрузка",
+  "rub": "руб",
+  "placeholder_expense_cost": "Введите сумму",
+  "placeholder_expense_comment": "Введите комментарий",
+  "expensed_at": "Дата",
+  "placeholder_expense_start_at": "Выберите дату",
+  "validate_category": "Категория не может быть пуста",
+  "validate_cost": "Сумма не может быть пуста",
+  "validate_expensed_at": "Дата не может быть пуста"
+
 }

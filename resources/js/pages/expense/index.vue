@@ -1,6 +1,6 @@
 <template>
-    <card :title="$t('categories')">
-        <Button type="primary" dashed icon="md-add" :to="{ name: 'category.createCategory' }">
+    <card :title="$t('expenses')">
+        <Button type="primary" dashed icon="md-add" :to="{ name: 'expense.createExpense' }">
             {{ this.$t('add') }}
         </Button>
         <Divider />
@@ -12,7 +12,7 @@
 <script>
     export default {
         metaInfo() {
-            return {title: this.$t('categories')}
+            return {title: this.$t('expenses')}
         },
         data() {
             return {
@@ -25,11 +25,23 @@
                     {
                         title: this.$t('name'),
                         key: 'name',
+                        sortable: true,
                     },
                     {
-                        title: this.$t('type'),
-                        key: 'type'
+                        title: this.$t('category'),
+                        key: 'category',
+                        sortable: true,
                     },
+                    {
+                        title: this.$t('comment'),
+                        key: 'comment'
+                    },
+                    {
+                        title: this.$t('cost'),
+                        key: 'cost',
+                        sortable: true,
+                    },
+
                     {
                         title: this.$t('action'),
                         key: 'action',
@@ -49,7 +61,7 @@
                                     },
                                     on: {
                                         click: () => {
-                                            this.$router.push({path: `/categories/${params.row.id}/update`})
+                                            this.$router.push({path: `/expenses/${params.row.id}/update`})
                                         }
                                     }
                                 }),
@@ -62,9 +74,9 @@
                                     },
                                     on: {
                                         click: () => {
-                                            let categoryId = params.row.id;
+                                            let expenseId = params.row.id;
                                             let index = params.index;
-                                            this.remove(categoryId, index);
+                                            this.remove(expenseId, index);
                                         }
                                     }
                                 })
@@ -76,12 +88,12 @@
             }
         },
         created() {
-            this.fetchCategories();
+            this.fetchExpenses();
         },
         methods: {
-            async remove(categoryId, index) {
+            async remove(expenseId, index) {
                 try {
-                    let response = await this.$store.dispatch('category/deleteCategory', {id: categoryId});
+                    let response = await this.$store.dispatch('expense/deleteExpense', {id: expenseId});
                     if (response.data.status === 'success') {
                         this.data.splice(index, 1);
                         this.$Message.info(response.data.message);
@@ -95,14 +107,16 @@
                     console.warn(e);
                 }
             },
-            async fetchCategories() {
-                let data = await this.$store.dispatch('category/fetchCategories');
+            async fetchExpenses() {
+                let data = await this.$store.dispatch('expense/fetchExpenses');
 
-                this.data = data.map((category) => {
+                this.data = data.map((expense) => {
                     return {
-                        name: category.name,
-                        id: category.id,
-                        type: this.$t(category.type),
+                        name: expense.name,
+                        id: expense.id,
+                        comment: expense.comment,
+                        cost: expense.cost,
+                        category: expense.category.name
                     }
                 });
             },

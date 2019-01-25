@@ -1,6 +1,9 @@
 const Home = () => import('~/pages/home').then(m => m.default || m)
 const Categories = () => import('~/pages/category').then(m => m.default || m)
 const CategoryUpdate = () => import('~/pages/category/update').then(m => m.default || m)
+const Expenses = () => import('~/pages/expense').then(m => m.default || m)
+const ExpenseUpdate = () => import('~/pages/expense/update').then(m => m.default || m)
+
 
 export default [
     {path: '/', name: 'home', component: Home},
@@ -14,6 +17,20 @@ export default [
             },
             {
                 path: '/create', name: 'category.createCategory', component: CategoryUpdate,
+            },
+        ]
+    },
+    {
+
+        path: '/expenses', component: {template: '<router-view/>'}, children: [
+            {
+                path: '', component: Expenses, name: 'expenses'
+            },
+            {
+                path: ':id/update', name: 'expense.update', component: ExpenseUpdate,
+            },
+            {
+                path: 'create', name: 'expense.createExpense', component: ExpenseUpdate,
             },
         ]
     },

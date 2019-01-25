@@ -16,6 +16,10 @@
                                 <Icon type="ios-pricetags-outline"/>
                                 {{ $t('categories') }}
                             </MenuItem>
+                            <MenuItem name="expenses" :to="{ name: 'expenses'}">
+                                <Icon type="ios-cash-outline"/>
+                                {{ $t('expenses') }}
+                            </MenuItem>
                         </MenuGroup>
                     </Menu>
                     <div slot="trigger"></div>
