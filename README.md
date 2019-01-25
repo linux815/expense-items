@@ -15,7 +15,8 @@ How install:
 10. `php artisan migrate`
 11. `php artisan db:seed`
 12. (optional) `chown laradock:laradock -R storage/logs/`
-13. run browser and enter `localhost:8089`
+13. `npm run watch`
+14. run browser and enter `localhost:8089`
 
 Для фронта использовал laravel iview boilerplate (https://github.com/AbdullahGhanem/laravel-spa-iview), убрал оттуда middleware'ы,
 так как не использую авторизацию в проекте. 
