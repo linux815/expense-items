@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/categories', 'CategoryController');
+Route::get('/expenses/report', 'ExpenseController@report');
 Route::resource('/expenses', 'ExpenseController');

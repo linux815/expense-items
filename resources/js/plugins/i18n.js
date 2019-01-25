@@ -1,11 +1,15 @@
 import Vue from 'vue'
 import store from '~/store'
+import iView from 'iview';
 import VueI18n from 'vue-i18n'
+import en from 'iview/dist/locale/en-US';
+import ru from 'iview/dist/locale/ru-RU';
 
-Vue.use(VueI18n)
+Vue.use(VueI18n);
+Vue.use(iView, {locale: (store.getters['lang/locale'] === 'ru') ? ru : en});
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: 'ru',
   messages: {}
 })
 
@@ -23,8 +27,8 @@ export async function loadMessages (locale) {
   }
 }
 
-;(async function () {
+(async function () {
   await loadMessages(store.getters['lang/locale'])
-})()
+})();
 
 export default i18n

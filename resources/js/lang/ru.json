@@ -42,6 +42,6 @@
   "placeholder_expense_start_at": "Выберите дату",
   "validate_category": "Категория не может быть пуста",
   "validate_cost": "Сумма не может быть пуста",
-  "validate_expensed_at": "Дата не может быть пуста"
-
+  "validate_expensed_at": "Дата не может быть пуста",
+  "analysis_expenses": "Анализ расходов"
 }

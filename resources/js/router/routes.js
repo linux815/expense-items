@@ -3,7 +3,7 @@ const Categories = () => import('~/pages/category').then(m => m.default || m)
 const CategoryUpdate = () => import('~/pages/category/update').then(m => m.default || m)
 const Expenses = () => import('~/pages/expense').then(m => m.default || m)
 const ExpenseUpdate = () => import('~/pages/expense/update').then(m => m.default || m)
-
+const ExpenseAnalysis = () => import('~/pages/expense/analysis').then(m => m.default || m)
 
 export default [
     {path: '/', name: 'home', component: Home},
@@ -31,6 +31,9 @@ export default [
             },
             {
                 path: 'create', name: 'expense.createExpense', component: ExpenseUpdate,
+            },
+            {
+                path: 'analysis', name: 'expense.analysisExpense', component: ExpenseAnalysis,
             },
         ]
     },

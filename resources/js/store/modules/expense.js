@@ -48,6 +48,29 @@ export const actions = {
             commit(types.FETCH_EXPENSE_FAILURE)
         }
     },
+    async fetchAnalysisExpenses({commit}, payload) {
+        try {
+            let dateRange = '';
+
+            if (typeof payload !== 'undefined') {
+                dateRange = payload.dateRange;
+            }
+
+            let configWithParams = {
+                params: {
+                    dateRange: dateRange,
+                }
+            };
+
+            const {data} = await axios.get('/api/expenses/report', configWithParams);
+
+            commit(types.FETCH_EXPENSE_SUCCESS, {categories: data});
+
+            return data;
+        } catch (e) {
+            commit(types.FETCH_EXPENSE_FAILURE)
+        }
+    },
     async fetchExpenseUpdateData({commit}, payload) {
         try {
             return await axios.get('/api/expenses/' + payload.id + '/edit');

@@ -25,6 +25,24 @@ class ExpenseController extends Controller
     }
 
     /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function report()
+    {
+        $startDate = Carbon::parse(request()->dateRange[0])->setTimezone(config('app.timezone'))->startOfDay();
+        $endDate = Carbon::parse(request()->dateRange[1])->setTimezone(config('app.timezone'))->endOfDay();
+
+        $expenses = Expense::query()
+            ->select(\DB::raw('sum(cost)'), 'category_id')
+            ->with('category')
+            ->whereBetween('expensed_at', [$startDate, $endDate])
+            ->groupBy('category_id')
+            ->get();
+
+        return response()->json($expenses);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

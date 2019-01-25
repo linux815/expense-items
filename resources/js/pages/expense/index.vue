@@ -3,6 +3,9 @@
         <Button type="primary" dashed icon="md-add" :to="{ name: 'expense.createExpense' }">
             {{ this.$t('add') }}
         </Button>
+        <Button type="primary" dashed icon="ios-analytics-outline" :to="{ name: 'expense.analysisExpense' }">
+            {{ this.$t('analysis_expenses') }}
+        </Button>
         <Divider />
 
         <Table border :columns="columns" :data="data" :no-data-text="this.$t('no_data')"></Table>
