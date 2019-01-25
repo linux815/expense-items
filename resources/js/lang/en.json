@@ -67,5 +67,6 @@
   "validate_category": "Category cannot be empty",
   "validate_cost": "Cost cannot be empty",
   "validate_expensed_at": "Expensed at cannot be empty",
-  "analysis_expenses": "Analysis expenses"
+  "analysis_expenses": "Analysis expenses",
+  "validate_name": "Name cannot be empty"
 }
